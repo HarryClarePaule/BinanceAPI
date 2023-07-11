@@ -1,5 +1,5 @@
 import config
-from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
+from binance import Client
 from binance.enums import *
 from flask import Flask, render_template, request, flash, redirect, jsonify
 
@@ -18,8 +18,6 @@ def index():
     exchange_info = client.get_exchange_info()
     symbols = exchange_info['symbols']
     
-    #print(exchange_info)
-    
     # look through assets and append to list assets which have a value above 0
     active_asset = []
     for asset in balances:
@@ -35,10 +33,6 @@ def index():
 @app.route("/buy", methods=['POST'])
 def buy():
     print(request.form)
-    # quantity = request.form['quantity']
-    # if not quantity:
-    #     flash("Please input quantity required")
-    # else:
     try:
         order = client.create_order(
         symbol=request.form['symbol'],
@@ -67,7 +61,7 @@ def history():
 
     for data in candlesticks:
         candlestick = { 
-            "time": data[0] / 1000, #unix timesatnd in milliseconds so need to convert
+            "time": data[0] / 1000, # unix timestamp in milliseconds so need to convert
             "open": data[1], 
             "high": data[2], 
             "low": data[3], 
