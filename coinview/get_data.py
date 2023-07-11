@@ -1,8 +1,8 @@
 import config
-from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
+from binance import Client
 import csv
 
-client = Client(config.API_KEY, config.API_SECRET)
+client = Client(config.API_KEY_CB, config.API_SECRET_CB)
 
 # candles = client.get_klines(symbol='BTCUSDT', interval=Client.KLINE_INTERVAL_15MINUTE)
 
