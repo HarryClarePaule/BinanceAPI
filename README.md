@@ -1,6 +1,6 @@
 # BinanceAPI
 
-## Step 1 - Websockets & Lghtweight Charts
+## Step 1 - Websockets & Lightweight Charts
 * Create realtime light-weight charts in javascript
 * wscat - connect to websocket from the command line
 * Capture output to text file
@@ -16,7 +16,7 @@
 * Plot pretty charts with buy and sell points
 
 
-### Addiitonal notes
+### Additional notes
 * The base endpoint is: wss://stream.binance.com:9443 or wss://stream.binance.com:443
 * wss://stream.binance.com:9443/ws/btcusdt@trade
 * < {"e":"trade","E":1688496453388,"s":"BTCUSDT","t":3163009968,"p":"30906.90000000","q":"0.00157000","b":21682983268,"a":21682984519,"T":1688496453388,"m":true,"M":true}
