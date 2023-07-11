@@ -1,10 +1,3 @@
-# import pandas as pd
-# # Load your data
-# df = pd.read_csv('all_time_daily.csv', header=None)  
-# # Convert timestamps to seconds by dividing by 1000
-# df[0] = df[0] / 1000  
-# # Save the new data back to CSV
-# df.to_csv('all_time_daily_seconds.csv', index=False, header=False)
 import backtrader as bt
 import matplotlib
 import datetime
@@ -36,6 +29,5 @@ cerebro.adddata(data)
 cerebro.addstrategy(RSIStrategy)
 
 cerebro.run()
-print(cerebro.broker)
 
 cerebro.plot()
